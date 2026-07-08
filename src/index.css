@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 20% 96%;
+    --foreground: 240 20% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 20% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 20% 4%;
+    --primary: 190 100% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 10% 90%;
+    --secondary-foreground: 240 20% 10%;
+    --muted: 240 10% 90%;
+    --muted-foreground: 240 5% 50%;
+    --accent: 190 100% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 10% 85%;
+    --input: 240 10% 85%;
+    --ring: 190 100% 42%;
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 5% 26%;
+    --sidebar-primary: 190 100% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 5% 96%;
+    --sidebar-accent-foreground: 240 6% 10%;
+    --sidebar-border: 240 10% 90%;
+    --sidebar-ring: 190 100% 42%;
+
+    /* BRUChat custom tokens */
+    --bruchat-surface: 0 0% 100%;
+    --bruchat-bubble-own: 210 20% 92%;
+    --bruchat-bubble-other: 240 10% 95%;
+    --bruchat-online: 145 80% 52%;
+    --bruchat-accent-glow: 190 100% 50%;
+    --bruchat-muted-text: 240 5% 50%;
+
+    /* Input-specific tokens */
+    --input-text: 240 20% 4%;
+    --input-surface: 0 0% 100%;
+    --input-border: 240 10% 85%;
+    --input-accent: 195 100% 40%;
+    --input-muted: 220 5% 42%;
+  }
+
+  .dark {
+    --background: 240 20% 4%;
+    --foreground: 240 10% 94%;
+    --card: 240 18% 8%;
+    --card-foreground: 240 10% 94%;
+    --popover: 240 18% 8%;
+    --popover-foreground: 240 10% 94%;
+    --primary: 190 100% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 15% 12%;
+    --secondary-foreground: 240 10% 94%;
+    --muted: 240 15% 12%;
+    --muted-foreground: 240 5% 55%;
+    --accent: 190 100% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 15% 16%;
+    --input: 240 15% 16%;
+    --ring: 190 100% 42%;
+
+    --sidebar-background: 240 18% 8%;
+    --sidebar-foreground: 240 5% 96%;
+    --sidebar-primary: 190 100% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 10% 14%;
+    --sidebar-accent-foreground: 240 5% 96%;
+    --sidebar-border: 240 15% 14%;
+    --sidebar-ring: 190 100% 42%;
+
+    --bruchat-surface: 240 18% 8%;
+    --bruchat-bubble-own: 240 15% 14%;
+    --bruchat-bubble-other: 240 18% 10%;
+    --bruchat-online: 145 80% 52%;
+    --bruchat-accent-glow: 190 100% 50%;
+    --bruchat-muted-text: 240 5% 55%;
+
+    /* Input-specific tokens (dark) */
+    --input-text: 240 10% 94%;
+    --input-surface: 240 20% 7%;
+    --input-border: 240 15% 18%;
+    --input-accent: 190 100% 50%;
+    --input-muted: 240 5% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  /* ═══════════════════════════════════════════════
+     GLOBAL INPUT VISIBILITY FIX — every field
+     ═══════════════════════════════════════════════ */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]),
+  textarea,
+  select {
+    color: hsl(var(--input-text)) !important;
+    background-color: hsl(var(--input-surface)) !important;
+    border: 1.5px solid hsl(var(--input-border)) !important;
+    border-radius: 12px !important;
+    padding: 10px 14px !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 14px !important;
+    outline: none !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    box-sizing: border-box !important;
+    caret-color: hsl(var(--input-accent)) !important;
+    height: auto !important;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"])::placeholder,
+  textarea::placeholder {
+    color: hsl(var(--input-muted)) !important;
+    opacity: 1 !important;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]):focus,
+  textarea:focus,
+  select:focus {
+    border-color: hsl(var(--input-accent)) !important;
+    box-shadow: 0 0 0 3px hsl(var(--input-accent) / 0.15) !important;
+    outline: none !important;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: hsl(var(--input-text)) !important;
+    -webkit-box-shadow: 0 0 0px 1000px hsl(var(--input-surface)) inset !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+  }
+
+  /* Input label styling */
+  .input-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: hsl(var(--input-muted));
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .input-label .required {
+    color: hsl(var(--input-accent));
+    margin-left: 2px;
+  }
+
+  /* Auth page inputs — slightly larger */
+  .auth-input input {
+    padding: 14px 18px !important;
+    font-size: 16px !important;
+  }
+}
+
+/* Custom scrollbar */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary)) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--primary));
+    border-radius: 9999px;
+  }
+}
+
+/* BRUChat animations */
+@keyframes breathe {
+  0%, 100% { opacity: 0.6; filter: drop-shadow(0 0 6px hsl(var(--bruchat-accent-glow) / 0.3)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 14px hsl(var(--bruchat-accent-glow) / 0.6)); }
+}
+
+@keyframes bounce-dot {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-6px); }
+}
+
+@keyframes slide-up-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-online {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--bruchat-online) / 0.4); }
+  50% { box-shadow: 0 0 0 4px hsl(var(--bruchat-online) / 0); }
+}
+
+.animate-breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+.animate-bounce-dot {
+  animation: bounce-dot 1.2s ease-in-out infinite;
+}
+
+.animate-slide-up-fade {
+  animation: slide-up-fade 150ms ease-out;
+}
+
+.animate-pulse-online {
+  animation: pulse-online 2s ease-in-out infinite;
+}
+
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.pb-safe-nav {
+  padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 768px) {
+  .pb-safe-nav {
+    padding-bottom: 1rem;
+  }
+}

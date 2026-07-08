@@ -1,0 +1,16 @@
+# BRUChat
+
+> Bru Chat / Bru Messenger — a private encrypted messenger with group chats, voice notes, social posts, reels, and YouTube. Built in Kigali, Rwanda by INEZA AIME BRUNO.
+
+BRUChat (also spelled Bru Chat, BruChat, Bru Messenger, BruMessenger) is a real-time messaging and social platform. Users sign in to chat one-on-one, join group conversations, share social posts, browse reels, and discover YouTube shorts and videos shared by the community.
+
+## Pages
+
+- [Home](/): Landing page, product overview, sign-in entry points.
+- [Donate](/donate): Support the project via MoMo (Rwanda).
+- [YouTube hub](/youtube): Public hub linking to community shorts and videos.
+
+## Optional
+
+- [Sign up](/signup): Create a BRUChat account.
+- [Log in](/login): Sign in to an existing account.
