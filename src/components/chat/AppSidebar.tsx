@@ -15,12 +15,12 @@ const AppSidebar = ({ mobile, onOpenMusic, onOpenAI }: AppSidebarProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { profile, signOut } = useAuth();
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(() => localStorage.getItem("bruchat-theme") !== "light");
   const [unreadNotifs, setUnreadNotifs] = useState(0);
 
   useEffect(() => {
     if (profile) {
-      setIsDark(profile.theme === "dark");
+      setIsDark(profile.theme ? profile.theme === "dark" : localStorage.getItem("bruchat-theme") !== "light");
       supabase
         .from("notifications")
         .select("id", { count: "exact", head: true })
