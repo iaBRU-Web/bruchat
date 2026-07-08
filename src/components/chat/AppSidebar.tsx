@@ -1,4 +1,4 @@
-import { MessageCircle, Users, Bell, Settings, LogOut, Moon, Sun, Grid3X3, Compass, Music, Star, Trophy, Film, Youtube } from "lucide-react";
+import { MessageCircle, Users, Bell, Settings, LogOut, Grid3X3, Compass, Music, Star, Trophy, Film, Youtube } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useState, useEffect } from "react";
@@ -167,13 +167,7 @@ const AppSidebar = ({ mobile, onOpenMusic, onOpenAI }: AppSidebarProps) => {
             {profile?.display_name?.charAt(0)?.toUpperCase() || "?"}
           </button>
         )}
-        <button
-          onClick={toggleTheme}
-          className="w-11 h-11 rounded-xl flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-          title={isDark ? "Light mode" : "Dark mode"}
-        >
-          {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-        </button>
+
         <button
           onClick={handleSignOut}
           className="w-11 h-11 rounded-xl flex items-center justify-center text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
