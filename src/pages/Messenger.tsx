@@ -6,7 +6,6 @@ import Inbox from "@/components/chat/Inbox";
 import ConversationView from "@/components/chat/ConversationView";
 import GroupConversationView from "@/components/chat/GroupConversationView";
 import EmptyState from "@/components/chat/EmptyState";
-import EazyChopPanel from "@/components/chat/EazyChopPanel";
 import ConnectionBanner from "@/components/chat/ConnectionBanner";
 import KeyboardShortcuts from "@/components/chat/KeyboardShortcuts";
 import AiExplainerPanel from "@/components/chat/AiExplainerPanel";
@@ -16,12 +15,10 @@ const Messenger = () => {
   const { conversationId, groupId } = useParams();
   const { profile } = useAuth();
   const [isMobileInboxOpen, setIsMobileInboxOpen] = useState(!conversationId && !groupId);
-  const [showMusic, setShowMusic] = useState(false);
   const [showAI, setShowAI] = useState(false);
   const [showAiExplainer, setShowAiExplainer] = useState(() => localStorage.getItem("bruchat-ai-explainer") === "true");
   const [showAiMobile, setShowAiMobile] = useState(false);
   const [aiWidth, setAiWidth] = useState(() => parseInt(localStorage.getItem("bruchat-ai-width") || "400"));
-  const [musicWidth, setMusicWidth] = useState(() => parseInt(localStorage.getItem("bruchat-music-width") || "360"));
 
   useEffect(() => {
     if (conversationId || groupId) {
@@ -48,7 +45,6 @@ const Messenger = () => {
       {/* Left sidebar */}
       <div className="hidden md:flex">
         <AppSidebar
-          onOpenMusic={() => { setShowMusic(!showMusic); setShowAI(false); }}
           onOpenAI={() => { setShowAI(!showAI); setShowMusic(false); }}
         />
       </div>
@@ -107,10 +103,6 @@ const Messenger = () => {
         </div>
       )}
 
-      {/* Music Panel */}
-      {showMusic && (
-        <div style={{ width: musicWidth }} className="border-l border-border flex-shrink-0 hidden md:flex">
-          <EazyChopPanel onClose={() => setShowMusic(false)} />
         </div>
       )}
 
