@@ -31,9 +31,13 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     setGoogleLoading(true);
     setError("");
-    const { error } = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri: redirectBackUrl,
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: redirectBackUrl,
+      }
     });
+    
     if (error) {
       setError("Something went wrong with sign in. Try again or use email 😅");
       setGoogleLoading(false);
