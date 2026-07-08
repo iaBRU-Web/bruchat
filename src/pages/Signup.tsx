@@ -5,7 +5,6 @@ import { Eye, EyeOff, MessageCircle, Mail, Lock, User, ArrowRight, Check, X } fr
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable/index";
 import BrunoProjects from "@/components/BrunoProjects";
 import Footer from "@/components/Footer";
 
@@ -43,9 +42,13 @@ const Signup = () => {
   const handleGoogleSignIn = async () => {
     setGoogleLoading(true);
     setError("");
-    const { error } = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri: redirectBackUrl,
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: redirectBackUrl,
+      }
     });
+    
     if (error) {
       setError("Something went wrong with sign in. Try again or use email 😅");
       setGoogleLoading(false);
