@@ -9,15 +9,7 @@ const BRU_PROJECTS: Record<string, { name: string; emoji: string; desc: string }
   "piano-bru.vercel.app": { name: "BRU Piano", emoji: "🎹", desc: "Virtual Piano" },
   "bru-cv.vercel.app": { name: "Bruno's CV", emoji: "💼", desc: "Portfolio & Resume" },
   "gta-kgl.vercel.app": { name: "GTA Kigali", emoji: "🏙️", desc: "Kigali Explorer" },
-  "eazychannel.vercel.app": { name: "NESTOR NATION™", emoji: "🌐", desc: "Eazy Chop Muzik" },
-};
-
-const EAZY_CHOP_VIDEOS: Record<string, string> = {
-  "oTqs80xS9KE": "148k views",
-  "eS2qpDM13mw": "47k views",
-  "_iWYrJhvJVE": "4.3k views",
-  "OwKFc20XD1w": "2.2k views",
-  "s9AsMIJacNQ": "2.1k views",
+  "eazychannel.vercel.app": { name: "NESTOR NATION™", emoji: "🌐", desc: "Official Website" },
 };
 
 function extractYouTubeId(url: string): string | null {
@@ -95,7 +87,6 @@ const LinkPreview = ({ url }: LinkPreviewProps) => {
 
   // YouTube preview
   if (ytId) {
-    const isEazyChop = EAZY_CHOP_VIDEOS[ytId];
     return (
       <a href={fullUrl} target="_blank" rel="noopener noreferrer" className="block mt-2 max-w-[300px] rounded-xl overflow-hidden border border-border hover:border-primary/40 transition-colors">
         <div className="relative">
@@ -112,12 +103,8 @@ const LinkPreview = ({ url }: LinkPreviewProps) => {
           </div>
         </div>
         <div className="p-2.5 bg-card">
-          <p className="text-xs font-semibold text-foreground truncate">
-            {isEazyChop ? `🎵 Eazy Chop Muzik` : "YouTube Video"}
-          </p>
-          <p className="text-[10px] text-muted-foreground">
-            {isEazyChop ? `${isEazyChop} • YouTube Shorts` : "youtube.com"}
-          </p>
+          <p className="text-xs font-semibold text-foreground truncate">YouTube Video</p>
+          <p className="text-[10px] text-muted-foreground">youtube.com</p>
         </div>
       </a>
     );
