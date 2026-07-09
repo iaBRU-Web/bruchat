@@ -7,11 +7,10 @@ import SidebarAd from "./SidebarAd";
 
 interface AppSidebarProps {
   mobile?: boolean;
-
   onOpenAI?: () => void;
 }
 
-const AppSidebar = ({ mobile, onOpenMusic, onOpenAI }: AppSidebarProps) => {
+const AppSidebar = ({ mobile, onOpenAI }: AppSidebarProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { profile, signOut } = useAuth();
@@ -127,8 +126,6 @@ const AppSidebar = ({ mobile, onOpenMusic, onOpenAI }: AppSidebarProps) => {
             </button>
           );
         })}
-
-
       </div>
 
       {/* Bottom */}
