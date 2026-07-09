@@ -40,57 +40,6 @@ const BrunoProjects = () => {
           </a>
         ))}
       </div>
-
-      {/* Our Friends */}
-      <h2 className="font-heading text-xl font-bold text-foreground mb-6 text-center mt-16">
-        Our Friends 🤝
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-        <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/40 transition-all">
-          <img
-            src="https://img.youtube.com/vi/oTqs80xS9KE/mqdefault.jpg"
-            alt="Eazy Chop"
-            className="w-full aspect-video object-cover"
-            loading="lazy"
-          />
-          <div className="p-4">
-            <p className="font-heading font-semibold text-foreground">Eazy Chop Muzik</p>
-            <p className="text-xs text-muted-foreground mb-3">Rwandan music creator • 148k+ views</p>
-            <div className="flex gap-2">
-              <a
-                href="https://youtube.com/channel/UCbj_88MfRErvm6baRPmK-DA?sub_confirmation=1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3 py-1.5 bg-destructive text-destructive-foreground text-xs font-semibold rounded-full hover:opacity-90 transition-opacity"
-              >
-                Subscribe
-              </a>
-              <a
-                href="https://eazychannel.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3 py-1.5 border border-border text-xs font-semibold rounded-full text-foreground hover:bg-muted transition-colors"
-              >
-                Watch
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-border rounded-xl p-6 flex flex-col items-center justify-center hover:border-primary/40 transition-all">
-          <span className="text-4xl mb-3">🤖</span>
-          <p className="font-heading font-semibold text-foreground">BRU Claude AI</p>
-          <p className="text-xs text-muted-foreground mb-4">Chat with Bruno's personal AI assistant</p>
-          <a
-            href="https://bru-claude.lovable.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-primary text-primary-foreground text-xs font-semibold rounded-full hover:opacity-90 transition-opacity"
-          >
-            Try it now ✨
-          </a>
-        </div>
-      </div>
     </section>
   );
 };
