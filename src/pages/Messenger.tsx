@@ -9,6 +9,7 @@ import EmptyState from "@/components/chat/EmptyState";
 import ConnectionBanner from "@/components/chat/ConnectionBanner";
 import KeyboardShortcuts from "@/components/chat/KeyboardShortcuts";
 import AiExplainerPanel from "@/components/chat/AiExplainerPanel";
+import ZoomBanner from "@/components/chat/ZoomBanner";
 import { X, Sparkles } from "lucide-react";
 
 const Messenger = () => {
@@ -41,6 +42,7 @@ const Messenger = () => {
       <h1 className="sr-only">BRUChat Messenger — your conversations</h1>
       <ConnectionBanner />
       <KeyboardShortcuts />
+      <ZoomBanner />
 
       {/* Left sidebar */}
       <div className="hidden md:flex">
