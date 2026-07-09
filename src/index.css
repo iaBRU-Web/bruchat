@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 /* Default zoom fix — makes layout match 80% browser zoom */
-html { zoom: 0.8; }
+html { font-size: 80%; }
+
+/* Also ensure the viewport fills correctly at this scale */
+#root { font-size: 1rem; }
 
 
 @tailwind base;
