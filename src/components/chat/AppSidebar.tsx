@@ -1,4 +1,4 @@
-import { MessageCircle, Users, Bell, Settings, LogOut, Grid3X3, Compass, Music, Star, Trophy, Film, Youtube } from "lucide-react";
+import { MessageCircle, Users, Bell, Settings, LogOut, Grid3X3, Compass, Star, Trophy, Film, Youtube } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useState, useEffect } from "react";
@@ -7,7 +7,7 @@ import SidebarAd from "./SidebarAd";
 
 interface AppSidebarProps {
   mobile?: boolean;
-  onOpenMusic?: () => void;
+
   onOpenAI?: () => void;
 }
 
@@ -128,14 +128,7 @@ const AppSidebar = ({ mobile, onOpenMusic, onOpenAI }: AppSidebarProps) => {
           );
         })}
 
-        {/* Music */}
-        <button
-          onClick={onOpenMusic}
-          className="w-11 h-11 rounded-xl flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted transition-all"
-          title="Eazy Chop Muzik"
-        >
-          <Music className="h-5 w-5" />
-        </button>
+
       </div>
 
       {/* Bottom */}
