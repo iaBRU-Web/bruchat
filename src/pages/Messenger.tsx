@@ -18,7 +18,7 @@ const Messenger = () => {
   const [showAI, setShowAI] = useState(false);
   const [showAiExplainer, setShowAiExplainer] = useState(() => localStorage.getItem("bruchat-ai-explainer") === "true");
   const [showAiMobile, setShowAiMobile] = useState(false);
-  const [aiWidth, setAiWidth] = useState(() => parseInt(localStorage.getItem("bruchat-ai-width") || "400"));
+  const [aiWidth] = useState(() => parseInt(localStorage.getItem("bruchat-ai-width") || "400"));
 
   useEffect(() => {
     if (conversationId || groupId) {
@@ -45,7 +45,7 @@ const Messenger = () => {
       {/* Left sidebar */}
       <div className="hidden md:flex">
         <AppSidebar
-          onOpenAI={() => { setShowAI(!showAI); setShowMusic(false); }}
+          onOpenAI={() => setShowAI(!showAI)}
         />
       </div>
 
@@ -100,9 +100,6 @@ const Messenger = () => {
       {showAiMobile && (
         <div className="md:hidden fixed inset-0 z-[60] bg-background animate-slide-up-fade">
           <AiExplainerPanel onClose={() => setShowAiMobile(false)} />
-        </div>
-      )}
-
         </div>
       )}
 
