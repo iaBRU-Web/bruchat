@@ -9,22 +9,16 @@ const ads = [
     url: "https://bru-claude.lovable.app",
   },
   {
-    emoji: "🎵",
-    text: "Eazy Chop Muzik",
-    sub: "Subscribe on YouTube",
-    url: "https://youtube.com/channel/UCbj_88MfRErvm6baRPmK-DA?sub_confirmation=1",
-  },
-  {
-    emoji: "🌐",
-    text: "NESTOR NATION™",
-    sub: "eazychannel.vercel.app",
-    url: "https://eazychannel.vercel.app",
-  },
-  {
     emoji: "💼",
     text: "Hire Bruno",
     sub: "bru-cv.vercel.app",
     url: "https://bru-cv.vercel.app",
+  },
+  {
+    emoji: "🏎️",
+    text: "BRU Kart",
+    sub: "bru-kart.vercel.app",
+    url: "https://bru-kart.vercel.app",
   },
 ];
 
