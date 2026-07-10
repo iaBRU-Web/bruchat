@@ -134,8 +134,8 @@ const Signup = () => {
       <Helmet>
         <title>Create your BRUChat account</title>
         <meta name="description" content="Sign up for BRUChat — free, private messaging with groups, voice notes, posts and reels." />
-        <link rel="canonical" href="https://bru-msg.lovable.app/signup" />
-        <meta property="og:url" content="https://bru-msg.lovable.app/signup" />
+        <link rel="canonical" href="https://bruchat.vercel.app/signup" />
+        <meta property="og:url" content="https://bruchat.vercel.app/signup" />
         <meta property="og:title" content="Create your BRUChat account" />
       </Helmet>
       <main id="main" className="flex-1 flex items-center justify-center px-6 py-12">
