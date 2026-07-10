@@ -5,7 +5,7 @@ import { Eye, EyeOff, MessageCircle, Mail, Lock, ArrowRight } from "lucide-react
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable/index";
+
 import { toast } from "@/hooks/use-toast";
 import BrunoProjects from "@/components/BrunoProjects";
 import Footer from "@/components/Footer";
@@ -117,8 +117,8 @@ const Login = () => {
       <Helmet>
         <title>Log in to BRUChat</title>
         <meta name="description" content="Sign in to BRUChat to access your private chats, groups, and social posts." />
-        <link rel="canonical" href="https://bru-msg.lovable.app/login" />
-        <meta property="og:url" content="https://bru-msg.lovable.app/login" />
+        <link rel="canonical" href="https://bruchat.vercel.app/login" />
+        <meta property="og:url" content="https://bruchat.vercel.app/login" />
         <meta property="og:title" content="Log in to BRUChat" />
       </Helmet>
       <main id="main" className="flex-1 flex items-center justify-center px-6 py-12">
